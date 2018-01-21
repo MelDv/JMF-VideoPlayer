@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.media.MediaView?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="jmf.videoplayer.FXMLDocumentController">
+     <Label fx:id="mainLabel" layoutX="126.0" layoutY="92.0" minHeight="16" minWidth="69" />
+  
+    <bottom>
+        <VBox alignment="CENTER" prefHeight="40.0" BorderPane.alignment="CENTER">
+            <children>
+                <Slider fx:id="videoSlider" />
+                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" stylesheets="@style.css">
+                    <children>
+                        <Button fx:id="openFileButton" mnemonicParsing="false" onAction="#openVideoFile" styleClass="openFileButton" stylesheets="@style.css">
+                     <graphic>
+                        <ImageView fx:id="im1" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../media/open.png" />
+                           </image>
+                        </ImageView>
+                     </graphic></Button>
+                        <Button fx:id="playButton" minHeight="30.0" minWidth="40.0" mnemonicParsing="false" onAction="#play" styleClass="playButton" stylesheets="@style.css">
+                     <graphic>
+                        <ImageView fx:id="im" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../media/play.png" />
+                           </image>
+                        </ImageView>
+                     </graphic></Button>
+                        <Button fx:id="pauseButton" mnemonicParsing="false" onAction="#pause">
+                     <graphic>
+                        <ImageView fx:id="im2" fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../media/pause.png" />
+                           </image>
+                        </ImageView>
+                     </graphic></Button>
+                        <Button fx:id="stopButton" mnemonicParsing="false" onAction="#stop">
+                     <graphic>
+                        <ImageView fx:id="im3" fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../media/stop.png" />
+                           </image>
+                        </ImageView>
+                     </graphic></Button>
+                        <Button fx:id="extraSlowButton" mnemonicParsing="false" onAction="#extraSlow" text="&lt;&lt;&lt;" />
+                        <Button fx:id="slowButton" mnemonicParsing="false" onAction="#slow" text="&lt;&lt;" />
+                        <Button fx:id="ffButton" mnemonicParsing="false" onAction="#fastForward" text="&gt;&gt;" />
+                        <Button fx:id="extraFFButton" mnemonicParsing="false" onAction="#extraFF" text="&gt;&gt;&gt;" />
+                        <Button fx:id="exampleButton" mnemonicParsing="false" onAction="#openExampleFile" text="Example video">
+                            <font>
+                                <Font size="10.0" />
+                            </font>
+                        </Button>
+                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                     <image>
+                        <Image url="@../../media/volume.png" />
+                     </image>
+                  </ImageView>
+                        <Slider fx:id="volumeSlider" />
+                    </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+                </HBox>
+            </children>
+        </VBox>
+    </bottom>
+    <center>
+        <StackPane id="label" fx:id="label" prefHeight="150.0" prefWidth="200.0" stylesheets="@style.css" BorderPane.alignment="CENTER">
+            <children>
+                <MediaView fx:id="mediaView" fitHeight="20" fitWidth="20">
+               <StackPane.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </StackPane.margin></MediaView>
+            </children>
+        </StackPane>
+    </center>
+</BorderPane>

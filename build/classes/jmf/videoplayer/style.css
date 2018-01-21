@@ -1,0 +1,14 @@
+.pane {
+    -fx-backbround-color: dimgrey;
+}
+
+.button {
+    -fx-background-color: transparent;
+    -fx-text-fill: red;
+    -fx-font-weight: bold;
+}
+
+.slider {
+    -fx-color: red;
+}
+
